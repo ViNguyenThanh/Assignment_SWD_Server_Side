@@ -1,0 +1,22 @@
+<div class="register-container">
+    <h1>Please register to become our member</h1>
+    <form action="/register" method="POST">
+        <label for="">Member Name: </label> <br>
+        <input name="memberName" type="text"/> <br>
+        <br>
+        <label for="">Password: </label> <br>
+        <input name="password" type="password"/> <br>
+        <br>
+        <label for="">Name: </label> <br>
+        <input name="name" type="text"/> <br>
+        <br>
+        <label for="">Year Of Birth: </label> <br>
+        <input name="yob" type="number"/> <br>
+        <p class="error-message"><%= errorMessage %></p>
+        <br>
+        <button>Register now</button>
+        <br>
+    </form>
+</div>
+<br>
+<a href="/">Home</a>

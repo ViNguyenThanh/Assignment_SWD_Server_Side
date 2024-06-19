@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const listItems = document.querySelectorAll('.left ul li');
+
+            listItems.forEach(item => {
+                const link = item.querySelector('a');
+                if (link && link.href === window.location.href) {
+                    item.classList.add('highlight'); // Thêm lớp highlight nếu đường dẫn trùng khớp
+                }
+                item.addEventListener('click', function () {
+                    const link = this.querySelector('a');
+                    if (link) {
+                        window.location.href = link.href; // Thực hiện hành động của thẻ <a> khi nhấp vào <li>
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <ul>
+                <li><a href="/brands">Brands</a></li>
+                <li><a href="/create-watch">Watches</a></li>
+                <li><a href="/">Accounts</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <%- body%>
+        </div>
+    </div>
+</body>
+
+</html>

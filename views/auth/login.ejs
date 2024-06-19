@@ -1,0 +1,16 @@
+<h1>Login page</h1>
+<!-- action để điều hướng đường link, method="POST": để đưa dữ liệu vào -->
+<form action="/login" method="POST">
+    <label for="">Tên đăng nhập</label> <br>
+    <input name="memberName" type="text"/> <br>
+    <br>
+    <label for="">Mật khẩu</label> <br>
+    <input name="password" type="password"/> <br>
+    <br>
+    <p class="title"><%= errorMessage %></p>
+    <br>
+    <button>Đăng nhập</button>
+    <br>
+</form>
+<br>
+<a href="/">Home</a>

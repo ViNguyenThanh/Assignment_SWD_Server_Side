@@ -1,0 +1,13 @@
+<div class="edit_brand-container">
+    <div class="go_back-btn">
+        <a href="/brands">←</a>
+    </div>
+    <form action="/edit-brand/<%= brand._id%>" method="POST">
+        <label for="">Brand's Name: </label> 
+        <input type="text" placeholder="Tên sản phẩm" name="brandName" value="<%= brand.brandName%>" /> <br />
+        <br />
+        <p><%= errorMessage%></p>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+</div>

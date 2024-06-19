@@ -1,0 +1,39 @@
+<div class="get_brand-container">
+    <div class="get_brand-btn">
+        <button id="button"><a href="/create-brand">Thêm sản phẩm </a> </button> <br> <br>
+    </div>
+    <table class="get_brand-table">
+        <tr>
+            <th class="get_brand-th">No</th>
+            <th class="get_brand-th">Brand's name</th>
+            <th class="get_brand-th">Action</th>
+        </tr>
+        <% brands.map((brand, index)=> {%>
+            <tr>
+                <td class="get_brand-td">
+                    <%= index + 1 %>
+                </td>
+                <td class="get_brand-td">
+                    <%= brand.brandName%>
+                </td>
+                <td>
+                    <a href="/delete-brand/<%= brand._id%>">Delete</a>
+                    <a href="/edit-brand/<%= brand._id%>">Update</a>
+                </td>
+            </tr>
+            <%}) %>
+    </table>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const button = document.getElementById('button');
+        const link = button.querySelector('a');
+
+        if (link) {
+            button.addEventListener('click', function () {
+                link.click(); // Kích hoạt sự kiện click của thẻ <a>
+            });
+        }
+    });
+</script>

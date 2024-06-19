@@ -1,0 +1,14 @@
+<div class="create_brand-container">
+    <div class="go_back-btn">
+        <a href="/brands">←</a>
+    </div>
+    <form action="/create-brand" method="POST">
+        <label for="">Brand's Name: </label> 
+        <input name="brandName" type="text"/> <br>
+        <br>
+        <p><%= errorMessage%></p>
+        <button>Create brand</button>
+        <br>
+        <br>
+    </form> 
+</div>
