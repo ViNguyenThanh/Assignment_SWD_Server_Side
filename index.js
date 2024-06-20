@@ -11,7 +11,7 @@ const HomeRouter = require('./routers/home.router')
 const AuthRouter = require('./routers/auth.router')
 const BrandRouter = require('./routers/brand.router')
 const CommentRouter = require('./routers/comment.router')
-// const WatchRouter = require('./routers/watch.router')
+const WatchRouter = require('./routers/watch.router')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -39,7 +39,7 @@ app.use("/", HomeRouter)
 app.use("/", AuthRouter)
 app.use("/", BrandRouter)
 app.use("/", CommentRouter)
-// app.use("/", WatchRouter)
+app.use("/", WatchRouter)
 
 
 connectDB()

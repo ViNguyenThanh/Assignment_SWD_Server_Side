@@ -22,7 +22,9 @@ const watchesSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    comments: [commentSchema],
+    comments: {
+        type: [String],
+    },
     brand: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "brands",

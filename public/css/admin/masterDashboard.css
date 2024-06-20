@@ -1,0 +1,60 @@
+.dashboard-container{
+    width: 100%;
+    /* margin-top: -0.8%; */
+    /* margin-left: -0.8%; */
+    height: 135vh;
+    display: flex !important;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #F3F6FF;
+}
+
+.dashboard-left{
+    width: 20%;
+    height: auto;
+    background-color: #202531;
+    padding-top: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.highlight {
+    background-color: #3e5486; 
+    color: black;     
+}
+.dashboard-left a {
+    width: 100%;
+    padding: 10px 0 10px 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 5px;
+    border-radius: 25px;
+}
+.dashboard-left a:hover{
+    color: white;
+    background-color: #3e5486;
+}
+
+
+.dashboard-right {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+/* admin */
+
+
+/* get-brand */
+
+
+
+/* create-brand */
+
+
+/* edit-brand */
+
+
+
+/* create-watch */

@@ -1,6 +1,9 @@
 <div class="get_brand-container">
+    <div id="error-message" class="alert alert-danger" role="alert" style="display: none;">
+        <%= errorMessage %>
+    </div>
     <div class="get_brand-btn">
-        <button id="button"><a href="/create-brand">Thêm sản phẩm </a> </button> <br> <br>
+        <a href="/create-brand" role="button">Create brand </a>
     </div>
     <table class="get_brand-table">
         <tr>
@@ -16,24 +19,17 @@
                 <td class="get_brand-td">
                     <%= brand.brandName%>
                 </td>
-                <td>
-                    <a href="/delete-brand/<%= brand._id%>">Delete</a>
-                    <a href="/edit-brand/<%= brand._id%>">Update</a>
+                <td class="get_brand-td">
+                    <a href="/delete-brand/<%= brand._id%>" role="button">
+                        <img src="assets/trash.png" />
+                    </a>
+                    <a href="/edit-brand/<%= brand._id%>" role="button">
+                        <img src="assets/edit.png" />
+                    </a>
                 </td>
             </tr>
             <%}) %>
     </table>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const button = document.getElementById('button');
-        const link = button.querySelector('a');
 
-        if (link) {
-            button.addEventListener('click', function () {
-                link.click(); // Kích hoạt sự kiện click của thẻ <a>
-            });
-        }
-    });
-</script>

@@ -1,27 +1,74 @@
 const WatchModel = require('../models/watch.model')
+const BrandModel = require('../models/brand.model')
 
 module.exports = {
     createWatch: async (req, res) => {
+        const brands = await BrandModel.find()
         try {
             const bodyData = req.body
-            if(bodyData.watchName == ""){
-                return res.render('admin/brand/create-watch.ejs', {errorMessage: "Cannot be left blank",  layout: "admin/masterDashboard.ejs"})
+            if (bodyData.watchName == "") {
+                return res.render('admin/watch/create-watch.ejs', { 
+                    brands, 
+                    watch: bodyData,
+                    errorMessage: "Name cannot be left blank", 
+                    layout: "admin/masterDashboard.ejs" 
+                })
             }
 
-            const isWatchNameExited = await WatchModel.findOne({watchName: bodyData.watchName})
+            const isWatchNameExited = await WatchModel.findOne({ watchName: bodyData.watchName })
             if (isWatchNameExited) {
-                return res.render('admin/watch/create-watch.ejs', {errorMessage: "Must not be the same as an existing name",  layout: "admin/masterDashboard.ejs"})
+                return res.render('admin/watch/create-watch.ejs', {
+                    brands,  
+                    watch: bodyData,
+                    errorMessage: "Must not be the same as an existing name", 
+                    layout: "admin/masterDashboard.ejs" 
+                })
+            }
+
+            if(bodyData.image == ""){
+                return res.render('admin/watch/create-watch.ejs', {
+                    brands, 
+                    watch: bodyData,
+                    errorMessage: "Image cannot be left blank", 
+                    layout: "admin/masterDashboard.ejs" })
+            }
+
+            if(bodyData.price == ""){
+                return res.render('admin/watch/create-watch.ejs', {
+                    brands, 
+                    watch: bodyData,
+                    errorMessage: "Price cannot be left blank", 
+                    layout: "admin/masterDashboard.ejs" })
+            }
+
+            if(bodyData.watchDescription == ""){
+                return res.render('admin/watch/create-watch.ejs', {
+                    brands, 
+                    watch: bodyData,
+                    errorMessage: "Description cannot be left blank", 
+                    layout: "admin/masterDashboard.ejs" })
             }
             
-            const newWatch = await WatchModel.create(bodyData)
+            await WatchModel.create(bodyData)
 
-            // return res.render ("admin/watch/create-watch.ejs", {errorMessage: "Create successfully", layout: "admin/masterDashboard.ejs"})
+            // return res.render ("admin/watch/create-watch.ejs", {errorNameMessage: "Create successfully", layout: "admin/masterDashboard.ejs"})
             res.redirect("/watches")
         } catch (error) {
             console.log(error.message)
         }
     },
     renderCreateWatchPage: async (req, res) => {
-        res.render("admin/watch/create-watch.ejs", { errorMessage: "", layout: "admin/masterDashboard.ejs"})
+        const bodyData = req.body
+        try {
+            const brands = await BrandModel.find()
+            res.render("admin/watch/create-watch.ejs", { 
+                brands, 
+                watch: bodyData,
+                errorMessage: "", 
+                layout: "admin/masterDashboard.ejs" 
+            })
+        } catch (error) {
+            console.log(error.message)
+        }
     },
 }

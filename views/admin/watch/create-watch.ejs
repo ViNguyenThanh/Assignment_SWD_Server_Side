@@ -1,1 +1,80 @@
-<h1>Hello</h1>
+<div class="create_watch-container">
+    <div class="go_back-btn">
+        <a href="/brands">←</a>
+    </div>
+    <form action="/create-watch" method="post">
+        <label for="">Watch's Name: </label>
+        <input type="text" name="watchName" value="<%= watch.watchName%>"/> <br />
+        <br />
+        <% if(errorMessage == "Name cannot be left blank") {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        <% if(errorMessage == "Must not be the same as an existing name") {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        <br>
+
+        <div class="watch-image">
+            <label for="formFile" class="form-label">Image: </label>
+            <input class="form-control" type="file" id="formFile" name="image" src="<%= watch.image%>">
+        </div>
+        <br>
+        <% if(errorMessage == "Image cannot be left blank") {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        <br>
+
+        <label for="">Price: </label>
+        <input type="number" name="price" value="<%= watch.price%>"/> <br />
+        <br />
+        <% if(errorMessage == "Price cannot be left blank") {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        <br>
+
+        <div class="watch-automatic">
+            <label for="">Automatic: </label>
+            <div class="watch-automatic-item">
+                <input type="radio" name="automatic" value="true">
+                  <label for="true">True</label><br>
+                <input type="radio" name="automatic" value="false">
+                  <label for="false">False</label><br>
+            </div>
+            <br />
+        </div>
+
+        <div class="watch-des">
+            <label for="">Description: </label>
+            <textarea name="watchDescription" id=""><%= watch.watchDescription%></textarea> <br />
+        </div>
+        <br />
+        <% if(errorMessage == "Description cannot be left blank") {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        <br>
+
+        <label for="">Brand: </label>
+        <select name="brand" id="">
+            <% brands.forEach(brand=> { %>
+                <option value="<%= brand._id%>">
+                    <%= brand.brandName %>
+                </option>
+                <% }) %>
+        </select>
+        
+        <br>
+        <br>
+        <br>
+        <button type="submit">Create Watch</button>
+    </form>
+</div>

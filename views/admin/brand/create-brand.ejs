@@ -4,7 +4,7 @@
     </div>
     <form action="/create-brand" method="POST">
         <label for="">Brand's Name: </label> 
-        <input name="brandName" type="text"/> <br>
+        <input name="brandName" type="text" value="<%= brand.brandName%>"/> <br>
         <br>
         <p><%= errorMessage%></p>
         <button>Create brand</button>

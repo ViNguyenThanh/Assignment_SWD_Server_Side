@@ -19,8 +19,8 @@
     width: 20%;
 }
 .header-container .logo img{
-    width: 45px;
-    height: 45px;
+    width: 100px;
+    height: 60px;
     cursor: pointer;
 }
 .header-container .user {
