@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="/css/admin/brand/edit-brand.css">
 
     <link rel="stylesheet" href="/css/admin/watch/create-watch.css">
+    <link rel="stylesheet" href="/css/admin/watch/get-watch.css">
+    <link rel="stylesheet" href="/css/admin/watch/edit-watch.css">
+
+    <link rel="stylesheet" href="/css/admin/account/get-account.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,12 +42,15 @@
     </script>
 </head>
 
-<body>
+<body  style="margin: 0;">
     <div class="dashboard-container">
         <div class="dashboard-left">
+            <div class="logo">
+                <a href="/"><img src="/assets/logo.png"></a>        
+            </div>
             <a href="/brands" role="button">Brands</a>
-            <a href="/create-watch" role="button">Watches</a>
-            <a href="/" role="button">Accounts</a>
+            <a href="/watches" role="button">Watches</a>
+            <a href="/accounts" role="button">Accounts</a>
         </div>
         <div class="dashboard-right">
             <%- body%>
@@ -71,6 +78,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>

@@ -1,0 +1,28 @@
+<div class="get_account-container">
+    <table class="get_account-table">
+        <tr>
+            <th class="get_account-th">No</th>
+            <th class="get_account-th">Username</th>
+            <th class="get_account-th">Name</th>
+            <th class="get_account-th">Year of Birth</th>
+        </tr>
+        <% accounts.map((account, index)=> {%>
+            <tr>
+                <td class="get_account-td">
+                    <%= index + 1 %>
+                </td>
+                <td class="get_account-td">
+                    <%= account.memberName%>
+                </td>
+                <td class="get_account-td">
+                    <%= account.name%>
+                </td>
+                <td class="get_account-td">
+                    <%= account.yob%>
+                </td>
+            </tr>
+            <%}) %>
+    </table>
+</div>
+
+

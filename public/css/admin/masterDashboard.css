@@ -2,7 +2,7 @@
     width: 100%;
     /* margin-top: -0.8%; */
     /* margin-left: -0.8%; */
-    height: 135vh;
+    height: 150vh;
     display: flex !important;
     font-family: "Josefin Sans", sans-serif;
     background-color: #F3F6FF;
@@ -10,13 +10,32 @@
 
 .dashboard-left{
     width: 20%;
-    height: auto;
+    height: 150vh;
     background-color: #202531;
     padding-top: 1%;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
+.dashboard-left .logo{
+    margin-bottom: 5%;
+}
+.dashboard-left .logo a{
+    margin: 0;
+    padding: 70px 0;
+    border-radius: 5px;
+}
+.dashboard-left .logo a img{
+    width: 300px;
+    height: 140px;
+}
+.dashboard-left .logo a:hover{
+    background-color: #313849;
+}
+
 .highlight {
     background-color: #3e5486; 
     color: black;     
@@ -36,25 +55,12 @@
 }
 
 
+
 .dashboard-right {
+    margin-left: 20%;
     width: 80%;
     display: flex;
     justify-content: center;
     padding-bottom: 5%;
 }
 
-/* admin */
-
-
-/* get-brand */
-
-
-
-/* create-brand */
-
-
-/* edit-brand */
-
-
-
-/* create-watch */

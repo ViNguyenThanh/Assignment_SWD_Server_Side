@@ -85,7 +85,7 @@ module.exports = {
             if (member.isAdmin){
                 res.redirect('/admin')
             } else{
-                res.redirect("/brands")
+                res.redirect("/")
             }
         } catch (error) {
             console.log(error.message)

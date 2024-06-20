@@ -1,13 +1,13 @@
-.create_watch-container {
+.edit_watch-container {
     margin-top: 5%;
     width: 90%;
 }
 
-.create_watch-container .go_back-btn{
+.edit_watch-container .go_back-btn{
     margin-top: -2%;
     margin-bottom: 4%;
 }
-.create_watch-container .go_back-btn a {
+.edit_watch-container .go_back-btn a {
     padding: 15px 20px;
     text-decoration: none;
     color: black;
@@ -16,16 +16,16 @@
     background-color: rgb(159, 204, 244);
     border-radius: 25px;
 }
-.create_watch-container .go_back-btn a:hover{
+.edit_watch-container .go_back-btn a:hover{
     background-color: #63697a;
 }
 
-.create_watch-container form label{
+.edit_watch-container form label{
     font-size: 25px;
     width: 20%;
 }
 
-.create_watch-container form input{
+.edit_watch-container form input{
     width: 70%;
     margin-left: 2%;
     padding: 10px;
@@ -34,52 +34,52 @@
     font-size: 20px;
 }
 
-.create_watch-container form p {
+.edit_watch-container form p {
     font-size: 17px;
     color: red;
     margin: 0;
     padding-left: 25%;
 }
 
-.create_watch-container .watch-image {
+.edit_watch-container .watch-image {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
-.create_watch-container .watch-image input{
+.edit_watch-container .watch-image input{
     padding-left: 20px;
     margin-left: 2.5%;
 }
-.create_watch-container .watch-image .show-image{
+.edit_watch-container .watch-image .show-image{
     margin-top: 3%;
     margin-left: 25%;
 }
 
-.create_watch-container .watch-automatic{
+.edit_watch-container .watch-automatic{
     display: flex;
     align-items: center;
     margin-bottom: 2%;
 }
-.create_watch-container .watch-automatic .watch-automatic-item {
+.edit_watch-container .watch-automatic .watch-automatic-item {
     width: 70%;
     margin-left: 2%;
     display: flex;
     align-items: center;
 }
-.create_watch-container .watch-automatic .watch-automatic-item input{
+.edit_watch-container .watch-automatic .watch-automatic-item input{
     width: 10%;
     height: 20px;
 }
-.create_watch-container .watch-automatic .watch-automatic-item label{
+.edit_watch-container .watch-automatic .watch-automatic-item label{
     width: 55%;
     margin-right: 20%
 }
 
-.create_watch-container .watch-des {
+.edit_watch-container .watch-des {
     display: flex;
     align-items: center;
 }
-.create_watch-container textarea{
+.edit_watch-container textarea{
     width: 70%;
     margin-left: 2.5%;
     padding: 10px;
@@ -88,7 +88,7 @@
     font-size: 20px;
 }
 
-.create_watch-container select {
+.edit_watch-container select {
     width: 70%;
     margin-left: 2%;
     padding: 10px;
@@ -97,7 +97,7 @@
     font-size: 20px;
 }
 
-.create_watch-container form button{
+.edit_watch-container form button{
     border-radius: 25px;
     padding: 15px 20px;
     border: none;
@@ -105,6 +105,6 @@
     font-family: "Josefin Sans", sans-serif;
     font-size: 17px;
 }
-.create_watch-container form button:hover{
+.edit_watch-container form button:hover{
     background-color: lightgray;
 }

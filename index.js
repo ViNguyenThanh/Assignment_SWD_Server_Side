@@ -12,6 +12,7 @@ const AuthRouter = require('./routers/auth.router')
 const BrandRouter = require('./routers/brand.router')
 const CommentRouter = require('./routers/comment.router')
 const WatchRouter = require('./routers/watch.router')
+const MemberRouter = require('./routers/member.router')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -40,6 +41,7 @@ app.use("/", AuthRouter)
 app.use("/", BrandRouter)
 app.use("/", CommentRouter)
 app.use("/", WatchRouter)
+app.use("/", MemberRouter)
 
 
 connectDB()

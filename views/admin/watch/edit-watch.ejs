@@ -1,8 +1,8 @@
-<div class="create_watch-container">
+<div class="edit_watch-container">
     <div class="go_back-btn">
         <a href="/watches">←</a>
     </div>
-    <form action="/create-watch" method="post">
+    <form action="/edit-watch/<%= watch._id%>" method="post">
         <label for="">Watch's Name: </label>
         <input type="text" name="watchName" value="<%= watch.watchName%>"/> <br />
         <br />
@@ -11,7 +11,7 @@
             <p> <%= errorMessage%> </p>
             <%
         }%>
-        <% if(errorMessage == "Must not be the same as an existing name") {
+        <% if(errorMessage == "Please update the new name") {
             %>
             <p> <%= errorMessage%> </p>
             <%
@@ -76,7 +76,7 @@
         <br>
         <br>
         <br>
-        <button type="submit">Create Watch</button>
+        <button type="submit">Update Watch</button>
     </form>
 </div>
 

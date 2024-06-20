@@ -56,8 +56,8 @@ module.exports = {
         }
     },
     deleteBrand: async (req, res) => {
-        const brandId = req.params.id // trong đg link là /deleteProduct/:id nên nhớ viết id thoy
-        // console.log(productId)
+        const brandId = req.params.id // trong đg link là /delete-brand/:id nên nhớ viết id thoy
+        // console.log(brandId)
         try {
             const response = await BrandModel.find()
             const exitedBrandOfWatch = await WatchModel.findOne({brand: brandId})
@@ -72,7 +72,7 @@ module.exports = {
             await BrandModel.findOneAndDelete({_id: brandId})
             res.redirect("/brands")
         } catch (error) {
-            console.log(error.message)
+            console.log(error.message) 
         }
     },
     renderEditBrandPage: async (req, res) => {

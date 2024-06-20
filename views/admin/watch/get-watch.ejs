@@ -1,4 +1,7 @@
 <div class="get_watch-container">
+    <div class="get_watch-btn">
+        <a href="/create-watch" role="button">Create watch </a>
+    </div>
     <table class="get_watch-table">
         <tr>
             <th class="get_watch-th">No</th>
@@ -8,6 +11,7 @@
             <th class="get_watch-th">Automatic</th>
             <th class="get_watch-th">Description</th>
             <th class="get_watch-th">Brand</th>
+            <th class="get_watch-th">Action</th>
         </tr>
         <% watches.map((watch, index)=> {%>
             <tr>
@@ -37,6 +41,16 @@
                         <%
                         }
                     }) %>
+                </td>
+                <td class="get_watch-td">
+                    <a href="/delete-watch/<%= watch._id%>" role="button">
+                        <img src="/assets/trash.png" />
+                        <!-- ❌ -->
+                    </a>
+                    <a href="/edit-watch/<%= watch._id%>" role="button">
+                        <img src="/assets/edit.png" />
+                        <!-- 📝 -->
+                    </a>
                 </td>
             </tr>
             <%}) %>
