@@ -1,0 +1,37 @@
+<div class="detail_watch-container">
+    <div class="detail_watch-left">
+        <img src="/assets/watch/<%= watch.image%>">
+    </div>
+    <div class="detail_watch-right">
+        <p>
+            <%= watch.watchName.toUpperCase() %>
+        </p>
+        <div class="detail_watch-important">
+            <p>
+                <%= (watch.price).toLocaleString('vi-VN', { style: 'currency' , currency: 'VND' }) %>
+            </p>
+            <div>
+                <p>
+                    <%= watch.automatic ? 'Automatic' : 'Handwinding' %>
+                </p>
+            </div>
+            <% brands.forEach((brand)=> {
+                if(String(brand._id) === String(watch.brand)){
+                %>
+                <div>
+                    <p>
+                        <%= brand.brandName%>
+                    </p>
+                </div>
+                <% } }) %>
+        </div>
+
+        <p>Product details: </p>
+        <div class="detail_watch-des">
+            <% watch.watchDescription.split('; ').forEach(description => { %>
+            
+                <p class="detail_watch-des-item"><%= description %></p>
+            <% }) %>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,11 @@
 const WatchModel = require('../models/watch.model')
 const BrandModel = require('../models/brand.model')
 
+function isPositiveInteger(value) {
+    // Kiểm tra xem giá trị có phải là số không âm
+    return /^[1-9]\d*$/.test(value);
+}
+
 module.exports = {
     createWatch: async (req, res) => {
         const brands = await BrandModel.find()
@@ -37,8 +42,16 @@ module.exports = {
                 return res.render('admin/watch/create-watch.ejs', {
                     brands, 
                     watch: bodyData,
-                    errorMessage: "Price cannot be left blank", 
+                    errorMessage: "Price cannot be left blank and must be a positive integer", 
                     layout: "admin/masterDashboard.ejs" })
+            }
+            if (!isPositiveInteger(bodyData.price)) {
+                return res.render('admin/watch/create-watch.ejs', {
+                    brands, 
+                    watch: bodyData,
+                    errorMessage: "Price must be a positive integer", 
+                    layout: "admin/masterDashboard.ejs" 
+                });
             }
 
             if(bodyData.watchDescription == ""){
@@ -149,6 +162,14 @@ module.exports = {
                     watch: response,
                     errorMessage: "Price cannot be left blank", 
                     layout: "admin/masterDashboard.ejs" })
+            }
+            if (!isPositiveInteger(bodyData.price)) {
+                return res.render('admin/watch/create-watch.ejs', {
+                    brands, 
+                    watch: bodyData,
+                    errorMessage: "Price must be a positive integer", 
+                    layout: "admin/masterDashboard.ejs" 
+                });
             }
 
             if(bodyData.watchDescription == ""){

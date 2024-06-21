@@ -20,8 +20,10 @@
 
         <div class="watch-image">
             <label for="formFile" class="form-label">Image: </label>
-            <input class="form-control" type="file" name="image" src="<%= watch.image%>" id="file-uploader" accept=".jpg, .jpeg, .png">
-            <div id="image-grid" class="show-image"></div>
+            <input class="form-control" type="file" name="image" src="<%= watch.image%>" id="file-uploader"  accept=".jpg, .jpeg, .png, .webp, .avif">
+            <div id="image-grid" class="show-image">
+                <img src="/assets/watch/<%= watch.image%>">
+            </div>
         </div>
         <br>
         <% if(errorMessage == "Image cannot be left blank") {
@@ -32,9 +34,14 @@
         <br>
 
         <label for="">Price: </label>
-        <input type="number" name="price" value="<%= watch.price%>"/> <br />
+        <input type="text" name="price" value="<%= watch.price%>"/> <br />
         <br />
         <% if(errorMessage == "Price cannot be left blank") {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        <% if(errorMessage == "Price must be a positive integer") {
             %>
             <p> <%= errorMessage%> </p>
             <%

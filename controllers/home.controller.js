@@ -18,4 +18,19 @@ module.exports = {
             console.log(error.message)
         }
     },
+    getWatchDetail: async (req, res) => {
+        const watchId = req.params.id
+        const brands = await BrandModel.find()
+        try {
+            const response = await WatchModel.findOne({_id: watchId})
+            res.render("detail-watch", {
+                brands: brands,
+                errorMessage: "", 
+                watch: response, 
+                // layout: "master.ejs"
+            })
+        } catch (error) {
+            console.log(error.message)
+        }
+    }, 
 }

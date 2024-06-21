@@ -10,7 +10,8 @@ const admin = async (req, res, next) => {
         const member = await MemberModel.findById(memberId)
         // console.log(member)
         if (!member || !member.isAdmin){
-            return res.send("You do not have access here")
+            // return res.send("You do not have access here")
+            return res.redirect("/")
         }
         next()
     } catch (error) {

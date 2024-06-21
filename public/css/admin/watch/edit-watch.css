@@ -54,6 +54,10 @@
     margin-top: 3%;
     margin-left: 25%;
 }
+.edit_watch-container .watch-image .show-image img{
+    width: 250px;
+    height: 250px;
+}
 
 .edit_watch-container .watch-automatic{
     display: flex;
