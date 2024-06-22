@@ -2,6 +2,7 @@
     margin-top: 5%;
     width: 90%;
 }
+
 .edit_brand-container .go_back-btn{
     margin-top: -2%;
     margin-bottom: 4%;
@@ -18,9 +19,11 @@
 .edit_brand-container .go_back-btn a:hover{
     background-color: #63697a;
 }
+
 .edit_brand-container form label{
     font-size: 25px;
 }
+
 .edit_brand-container form input{
     width: 70%;
     margin-left: 2%;
@@ -29,12 +32,17 @@
     border-radius: 20px;
     font-size: 20px;
 }
+.edit_brand-container form input:focus{
+    outline: none;
+}
+
 .edit_brand-container form p {
     font-size: 17px;
     color: red;
     margin: 0 0 2%;
     padding-left: 20%;
 }
+
 .edit_brand-container form button{
     border-radius: 25px;
     padding: 15px 20px;

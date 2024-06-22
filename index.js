@@ -36,6 +36,13 @@ app.use(
     })
 );
 
+app.use((req, res, next) => {
+    res.locals.memberId = req.session.memberId;
+    res.locals.memberName = req.session.memberName;
+    res.locals.isAdmin = req.session.isAdmin
+    next();
+});
+
 app.use("/", HomeRouter)
 app.use("/", AuthRouter)
 app.use("/", BrandRouter)

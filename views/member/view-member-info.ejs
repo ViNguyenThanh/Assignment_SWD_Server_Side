@@ -1,0 +1,20 @@
+<div class="member_info-container">
+    <div class="go-to-edit">
+        <a href="/member-info-edit/<%= member._id%>">
+            <img src="/assets/edit-black.png"/>
+        </a>
+    </div>
+    <form id="memberForm" action="/member-info/<%= member._id%>" method="POST">
+        <label for="">Username: </label> 
+        <input type="text" name="memberName" value="<%= member.memberName%>" disabled/> <br />
+        <br />
+        <label for="">Full Name: </label> 
+        <input type="text" name="name" value="<%= member.name%>" disabled/> <br />
+        <br />
+        <label for="">Year of Birth: </label> 
+        <input type="text" name="yob" value="<%= member.yob%>" disabled/> <br />
+        <br />
+        <br>
+    </form>
+</div>
+

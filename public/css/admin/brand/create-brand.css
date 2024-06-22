@@ -29,6 +29,9 @@
     border-radius: 20px;
     font-size: 20px;
 }
+.create_brand-container form input:focus{
+    outline:none;
+}
 .create_brand-container form p {
     font-size: 17px;
     color: red;

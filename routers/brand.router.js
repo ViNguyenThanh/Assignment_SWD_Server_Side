@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const BrandController = require('../controllers/brand.controller')
-const admin = require("../middlewares/verify")
+const {admin} = require("../middlewares/verify")
 
 router.get("/create-brand", admin, BrandController.renderCreateBrandPage)
 router.post("/create-brand", admin, BrandController.createBrand)

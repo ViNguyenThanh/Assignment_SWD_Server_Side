@@ -104,7 +104,7 @@ module.exports = {
             }
             if(bodyData.brandName == ""){
                 return res.render('admin/brand/edit-brand.ejs', {
-                    errorMessage: "Cannot be left blank", 
+                    errorMessage: "Brand cannot be left blank", 
                     brand: response, 
                     layout: "admin/masterDashboard.ejs"
                 })

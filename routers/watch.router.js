@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const WatchController = require('../controllers/watch.controller')
-const admin = require("../middlewares/verify")
+const { admin } = require('../middlewares/verify')
 
 router.get("/create-watch", admin, WatchController.renderCreateWatchPage)
 router.post("/create-watch", admin, WatchController.createWatch)

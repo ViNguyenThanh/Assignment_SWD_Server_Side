@@ -1,16 +1,42 @@
-<h1>Login page</h1>
-<!-- action để điều hướng đường link, method="POST": để đưa dữ liệu vào -->
-<form action="/login" method="POST">
-    <label for="">Tên đăng nhập</label> <br>
-    <input name="memberName" type="text"/> <br>
-    <br>
-    <label for="">Mật khẩu</label> <br>
-    <input name="password" type="password"/> <br>
-    <br>
-    <p class="title"><%= errorMessage %></p>
-    <br>
-    <button>Đăng nhập</button>
-    <br>
-</form>
-<br>
-<a href="/">Home</a>
+<div class="login-container">
+
+    <div class="go-back-home">
+        <a href="/" role="button"><img src="assets/home.png"/></a>
+    </div>
+
+    <!-- action để điều hướng đường link, method="POST": để đưa dữ liệu vào -->
+    <form action="/login" method="POST" class="login-form">
+        <h1>Welcome</h1>
+        <label for="">Username: </label> <br>
+        <input name="memberName" type="text" /> <br>
+        <% if(errorMessage == "Username cannot be left blank") {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
+        <% if(errorMessage == "Account does not exist") {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
+        <br>
+        <label for="">Password: </label> <br>
+        <input name="password" type="password" /> <br>
+        <% if(errorMessage == "Password cannot be left blank") {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
+        <% if(errorMessage == "Incorrect password") {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
+        <br>
+        <br>
+        <div class="login-btn">
+            <button>Login</button>
+        </div>
+        <br>
+    </form>
+</div>

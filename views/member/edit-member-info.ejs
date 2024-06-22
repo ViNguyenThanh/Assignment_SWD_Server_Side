@@ -1,0 +1,33 @@
+<div class="member_info-container">
+    <form id="memberForm" action="/member-info-edit/<%= member._id%>" method="POST">
+        <label for="">Username: </label> 
+        <input type="text" name="memberName" value="<%= member.memberName%>" disabled/> <br />
+        <br />
+        <label for="">Full Name: </label> 
+        <input type="text" name="name" value="<%= member.name%>"/> <br />
+        <% if(errorMessage == "Full Name cannot be left blank") {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        <br />
+        <label for="">Year of Birth: </label> 
+        <input type="text" name="yob" value="<%= member.yob%>"/> <br />
+        <br />
+        <% if(errorMessage == "Year of Birth cannot be left blank") {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        
+        <% if(errorMessage == `Year of birth must be a 4-digit number between 1900 and ${currentYear}`) {
+            %>
+            <p> <%= errorMessage%> </p>
+            <%
+        }%>
+        <br>
+        <button type="submit">Save</button>
+        <!-- <button type="submit" id="saveButton" style="display: none;">Save</button> -->
+    </form>
+</div>
+

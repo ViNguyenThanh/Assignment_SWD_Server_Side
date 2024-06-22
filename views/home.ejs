@@ -3,9 +3,11 @@
         <div class="home-filter">
             <select id="brandFilter">
                 <option value="">All Brands</option>
-                <% brands.forEach((brand) => { %>
-                    <option value="<%= brand._id %>"><%= brand.brandName %></option>
-                <% }) %>
+                <% brands.forEach((brand)=> { %>
+                    <option value="<%= brand._id %>">
+                        <%= brand.brandName %>
+                    </option>
+                    <% }) %>
             </select>
         </div>
         <div class="home-search">
@@ -14,26 +16,35 @@
         </div>
     </div>
     <% watches.map((watch)=> {%>
-        <div class="<%= watch.automatic ? 'home-watch-item' : 'home-watch-item-normal' %>">
+        <div class="home-watch-item %>">
+            <div class="home-watch-crown">
+                <% if (watch.automatic) { %>
+                    <img src="assets/crown.png">
+                <% } %>
+            </div>
             <div class="home-watch-item-img">
                 <img src="assets/watch/<%= watch.image%>">
             </div>
             <p>
-                <strong>Name: </strong> <%= watch.watchName%>
+                <%= watch.watchName.toUpperCase()%>
             </p>
-            <% brands.forEach((brand)=> {
-                if(String(brand._id) === String(watch.brand)){
-                %>
-                <p class="brand-id" style="display: none;"><%= brand._id %></p>
-                <p>
-                    <strong>Brand: </strong> <%= brand.brandName%>
-                </p>
-                <% } }) %>
+            <div class="home-watch-item-brand">
+                <% brands.forEach((brand)=> {
+                    if(String(brand._id) === String(watch.brand)){
+                    %>
+                    <p class="brand-id" style="display: none;">
+                        <%= brand._id %>
+                    </p>
+                    <p>
+                        <%= brand.brandName%>
+                    </p>
+                    <% } }) %>
+            </div>
             <div class="home-watch-detail-btn">
                 <a href="/detail-watch/<%= watch._id%>" role="button">Detail</a>
             </div>
         </div>
-    <%}) %>
+        <%}) %>
 </div>
 
 <script>
@@ -42,7 +53,7 @@
     // function adjustHomeContainerHeight() {
     //     const homeContainer = document.getElementById('homeContainer');
     //     const visibleWatchItems = document.querySelectorAll('.home-watch-item:not([style*="display: none"]), .home-watch-item-normal:not([style*="display: none"])');
-        
+
     //     if (visibleWatchItems.length === 0) {
     //         homeContainer.style.height = '100vh';
     //     } else {
@@ -51,7 +62,7 @@
     // }
 
 
-    document.getElementById('searchButton').addEventListener('click', function() {
+    document.getElementById('searchButton').addEventListener('click', function () {
         const searchValue = document.getElementById('searchInput').value.toLowerCase();
         const watchItems = document.querySelectorAll('.home-watch-item, .home-watch-item-normal');
 
@@ -83,8 +94,8 @@
         });
         // adjustHomeContainerHeight();
     });
-    
+
     // Điều chỉnh chiều cao của home-container khi tải trang
     // adjustHomeContainerHeight();
-    
+
 </script>

@@ -25,11 +25,41 @@
     justify-content: flex-end;
     align-items: center;
 }
+.header-container .user .dropdown {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(42, 42, 42);
+}
+.header-container .user .dropdown img{
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+}
+.header-container .user .dropdown p{
+    color: white;
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: 20px;
+    font-size: 22px;
+}
+
+.header-container .user .dropdown .dropdown-menu{
+    background-color: rgb(83, 83, 83);
+}
+.header-container .user .dropdown .dropdown-menu a{
+    font-size: 17px;
+}
+
+
 .header-container .user a{
     color: white;
     text-decoration: none;
     margin-right: 3%;
     padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 22px;
 }
 .header-container .user a:hover{
     background-color: lightgrey;

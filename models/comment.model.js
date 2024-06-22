@@ -16,6 +16,9 @@ const commentSchema = mongoose.Schema({
         ref: "members",
         required: true,
     }
+}, {
+    versionKey: false,
+    timestamps: true, 
 })
 
 module.exports = mongoose.model("comment", commentSchema)

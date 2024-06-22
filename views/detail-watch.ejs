@@ -1,8 +1,11 @@
-<div class="detail_watch-container">
+<div class="<%= watch.automatic ? 'detail_watch-container' : 'detail_watch-container-normal' %>">
+    <div class="go-back-btn">
+        <a href="/">←</a>
+    </div>
     <div class="detail_watch-left">
         <img src="/assets/watch/<%= watch.image%>">
     </div>
-    <div class="detail_watch-right">
+    <div class="<%= watch.automatic ? 'detail_watch-right' : 'detail_watch-right-normal' %>">
         <p>
             <%= watch.watchName.toUpperCase() %>
         </p>

@@ -1,0 +1,95 @@
+.login-container{
+    padding-top: 100px;
+    height: 86vh;
+    width: 100%;
+    background-image: url('/assets/login-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    font-family: "Josefin Sans", sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.go-back-home{
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    background-color: rgba(154, 154, 154, 0.7);
+    padding: 8px;
+    border-radius: 5px;
+}
+.go-back-home a {
+
+}
+.go-back-home a img{
+    width: 45px;
+    height: 45px;
+}
+.go-back-home:hover{
+    background-color: rgb(154, 154, 154);
+}
+
+.login-form {
+    margin: -1% 3% 0;
+    width: 44%;
+    height: 80vh;
+    background-color: rgba(205, 205, 205, 0.7);
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.login-form h1{
+    width: 100%;
+    text-align: center;
+    color: rgb(44, 44, 44);
+    font-size: 40px;
+}
+.login-form label{
+    width: 70%;
+    color: rgb(44, 44, 44);
+    font-size: 22px;
+    font-weight: 600;
+}
+.login-form input{
+    width: 70%;
+    margin-bottom: 5%;
+    color: rgb(44, 44, 44);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    padding: 8px 15px;
+}
+.login-form input:focus{
+    outline: none;
+}
+.login-form .login-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.login-form .login-btn button{
+    margin-top: 2%;
+    padding: 10px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Josefin Sans", sans-serif;
+}
+.login-form .login-btn button:hover{
+    background-color: white;
+}
+.error-message{
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    color: red;
+    font-size: 17px;
+}

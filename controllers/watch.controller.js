@@ -43,7 +43,8 @@ module.exports = {
                     brands, 
                     watch: bodyData,
                     errorMessage: "Price cannot be left blank and must be a positive integer", 
-                    layout: "admin/masterDashboard.ejs" })
+                    layout: "admin/masterDashboard.ejs" 
+                })
             }
             if (!isPositiveInteger(bodyData.price)) {
                 return res.render('admin/watch/create-watch.ejs', {
@@ -59,7 +60,8 @@ module.exports = {
                     brands, 
                     watch: bodyData,
                     errorMessage: "Description cannot be left blank", 
-                    layout: "admin/masterDashboard.ejs" })
+                    layout: "admin/masterDashboard.ejs" 
+                })
             }
             
             await WatchModel.create(bodyData)
@@ -153,7 +155,8 @@ module.exports = {
                     brands: brands, 
                     watch: response,
                     errorMessage: "Image cannot be left blank", 
-                    layout: "admin/masterDashboard.ejs" })
+                    layout: "admin/masterDashboard.ejs" 
+                })
             }
 
             if(bodyData.price == ""){
@@ -161,7 +164,8 @@ module.exports = {
                     brands: brands, 
                     watch: response,
                     errorMessage: "Price cannot be left blank", 
-                    layout: "admin/masterDashboard.ejs" })
+                    layout: "admin/masterDashboard.ejs" 
+                })
             }
             if (!isPositiveInteger(bodyData.price)) {
                 return res.render('admin/watch/create-watch.ejs', {

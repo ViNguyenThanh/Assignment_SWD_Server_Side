@@ -1,22 +1,56 @@
 <div class="register-container">
-    <h1>Please register to become our member</h1>
-    <form action="/register" method="POST">
-        <label for="">Member Name: </label> <br>
+
+    <form action="/register" method="POST" class="register-form">
+
+        <div class="go-back">
+            <a href="/" role="button"><img src="assets/home.png"/></a>
+        </div>
+
+        <h1>Welcome</h1>
+
+        <label for="">Username: </label> <br>
         <input name="memberName" type="text"/> <br>
+        <% if(errorMessage == "Username cannot be left blank") {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
         <br>
         <label for="">Password: </label> <br>
         <input name="password" type="password"/> <br>
+        <% if(errorMessage == "Password cannot be left blank") {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
         <br>
-        <label for="">Name: </label> <br>
+        <label for="">Full Name: </label> <br>
         <input name="name" type="text"/> <br>
+        <% if(errorMessage == "Full Name cannot be left blank") {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
         <br>
         <label for="">Year Of Birth: </label> <br>
-        <input name="yob" type="number" min="1900" max="2024"/> <br>
-        <p class="error-message"><%= errorMessage %></p>
+        <input name="yob" type="text"/> <br>
+        <% if(errorMessage == "Year of birth cannot be left blank") {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
+        
+        <% if(errorMessage == `Year of birth must be a 4-digit number between 1900 and ${currentYear}`) {
+            %>
+            <p class="error-message"> <%= errorMessage%> </p>
+            <%
+        }%>
         <br>
-        <button>Register now</button>
+        <div class="register-btn">
+            <button>Register Now</button>
+        </div>
         <br>
     </form>
 </div>
-<br>
-<a href="/">Home</a>
+
+
