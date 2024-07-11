@@ -130,11 +130,19 @@ module.exports = {
                 });
             }
 
+            if (newPassword === currentPassword) {
+                return res.render('member/change-password.ejs', {
+                    memberId,
+                    errorMessage: "New password must not be the same as Current password",
+                    layout: "member/masterMember.ejs"
+                });
+            }
+
             // Kiểm tra mật khẩu mới và xác nhận mật khẩu mới
             if (newPassword !== confirmNewPassword) {
                 return res.render('member/change-password.ejs', {
                     memberId,
-                    errorMessage: "New password do not match",
+                    errorMessage: "New password and Confirm new password do not match",
                     layout: "member/masterMember.ejs"
                 });
             }

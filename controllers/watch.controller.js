@@ -42,7 +42,7 @@ module.exports = {
                 return res.render('admin/watch/create-watch.ejs', {
                     brands, 
                     watch: bodyData,
-                    errorMessage: "Price cannot be left blank and must be a positive integer", 
+                    errorMessage: "Price cannot be left blank", 
                     layout: "admin/masterDashboard.ejs" 
                 })
             }

@@ -17,10 +17,10 @@
     padding-top: 100px;
     background-color: #efefef;
     display: flex;
+    flex-wrap: wrap;
     padding-bottom: 3%;
     font-family: "Josefin Sans", sans-serif;
 }
-
 .go-back-btn{
     width: 100%;
 }
@@ -35,13 +35,15 @@
 }
 
 
-.detail_watch-left{
+.detail_watch-container .detail_watch-left,
+.detail_watch-container-normal .detail_watch-left{
     width: 50%;
     display: flex;
     justify-content: center;
     
 }
-.detail_watch-left img{
+.detail_watch-container .detail_watch-left img,
+.detail_watch-container-normal .detail_watch-left img{
     background-color: white;
     width: 600px;
     height: 600px;
@@ -129,6 +131,7 @@
     width: 45%;
     color: rgb(74, 74, 74);
     margin-left: 3%;
+    margin-top: 2%;
     font-weight: unset;
     font-size: 18px;
 }

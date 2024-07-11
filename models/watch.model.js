@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const commentSchema = require('./comment.model')
 
 const watchesSchema = mongoose.Schema({
     watchName: {
